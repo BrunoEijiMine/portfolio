@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/Button'
 
 const HEADING = 'Vamos conversar'
 const SUBHEADING = 'Tem um projeto em mente? Me chama e vamos conversar.'
-const EMAIL = 'brunoeiji151@gmail.com'
 
 const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/BrunoEijiMine' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bruno-eiji-1b47b1206/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/brunoeiji_/' },
 ]
 
 export function Contact() {
@@ -21,7 +21,6 @@ export function Contact() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button href={`mailto:${EMAIL}`}>{EMAIL}</Button>
           {SOCIALS.map((social) => (
             <Button key={social.href} href={social.href} target="_blank" rel="noreferrer" variant="secondary">
               {social.label}

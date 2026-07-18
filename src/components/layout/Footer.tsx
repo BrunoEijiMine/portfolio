@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { Container } from '@/components/ui/Container'
 
 const NAME = 'Bruno Eiji'
@@ -7,6 +7,7 @@ const NAME = 'Bruno Eiji'
 const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/BrunoEijiMine', icon: faGithub },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bruno-eiji-1b47b1206/', icon: faLinkedinIn },
+  { label: 'Instagram', href: 'https://www.instagram.com/brunoeiji_/', icon: faInstagram },
 ]
 
 export function Footer() {
