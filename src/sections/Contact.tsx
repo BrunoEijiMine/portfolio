@@ -3,20 +3,22 @@ import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 
 const HEADING = 'Vamos conversar'
-const DESCRIPTION = 'Estou aberto(a) a novas oportunidades e colaborações. Me manda uma mensagem!'
-const EMAIL = 'seuemail@exemplo.com'
+const SUBHEADING = 'Tem um projeto em mente? Me chama e vamos conversar.'
+const EMAIL = 'brunoeiji151@gmail.com'
 
 const SOCIALS = [
-  { label: 'GitHub', href: 'https://github.com/seuusuario' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/seuusuario' },
+  { label: 'GitHub', href: 'https://github.com/BrunoEijiMine' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bruno-eiji-1b47b1206/' },
 ]
 
 export function Contact() {
   return (
     <Section id="contact">
       <Card className="flex flex-col items-center gap-6 p-10 text-center sm:p-16">
-        <h2 className="text-3xl font-medium text-white sm:text-4xl">{HEADING}</h2>
-        <p className="max-w-md text-neutral-400">{DESCRIPTION}</p>
+        <div>
+          <h2 className="text-3xl font-medium text-white sm:text-4xl">{HEADING}</h2>
+          <p className="mt-2 text-neutral-400">{SUBHEADING}</p>
+        </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Button href={`mailto:${EMAIL}`}>{EMAIL}</Button>

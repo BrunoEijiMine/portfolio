@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import { Section } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import logoHa from '@/assets/logo-ha.webp'
@@ -58,8 +59,15 @@ export function Experience() {
 
             <div className="relative mt-6 flex flex-col gap-6">
               <div className="absolute top-2 bottom-2 left-1.75 w-px bg-white/10" />
-              {entry.roles.map((role) => (
-                <div key={role.title} className="relative pl-6">
+              {entry.roles.map((role, index) => (
+                <motion.div
+                  key={role.title}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
+                  className="relative pl-6"
+                >
                   <span className="absolute top-1.5 left-0 h-3.75 w-3.75 rounded-full border-2 border-neutral-950 bg-neutral-500" />
                   <div className="rounded-xl border border-white/10 bg-white/3 p-4">
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -77,7 +85,7 @@ export function Experience() {
                       </p>
                     )}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </Card>

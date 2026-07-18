@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faLock } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'motion/react'
 import { Section } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
@@ -78,52 +79,66 @@ export function Projects() {
       <h2 className="text-3xl font-medium text-white sm:text-4xl">{HEADING}</h2>
 
       <div className="mt-8 flex flex-col gap-6">
-        {PROJECTS.map((project) => (
-          <Card key={project.title} className="flex flex-col p-8">
-            <div className="flex items-center gap-3">
-              {project.logo ? (
-                <img
-                  src={project.logo}
-                  alt={project.title}
-                  className="h-14 w-14 rounded-lg bg-white/5 object-contain p-1.5"
-                />
-              ) : (
-                <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-white/5 text-neutral-400">
-                  <FontAwesomeIcon icon={faCode} className="h-6 w-6" />
+        {PROJECTS.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
+          >
+            <Card className="flex flex-col p-8">
+              <div className="flex items-center gap-3">
+                {project.logo ? (
+                  <img
+                    src={project.logo}
+                    alt={project.title}
+                    className="h-14 w-14 rounded-lg bg-white/5 object-contain p-1.5"
+                  />
+                ) : (
+                  <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-white/5 text-neutral-400">
+                    <FontAwesomeIcon icon={faCode} className="h-6 w-6" />
+                  </div>
+                )}
+                <div>
+                  <h3 className="text-2xl font-medium text-white">{project.title}</h3>
+                  <p className="text-sm text-neutral-500">{project.role}</p>
                 </div>
-              )}
-              <div>
-                <h3 className="text-2xl font-medium text-white">{project.title}</h3>
-                <p className="text-sm text-neutral-500">{project.role}</p>
               </div>
-            </div>
-            <div className="mt-3 flex flex-col gap-3">
-              <p className="text-neutral-400">{project.description}</p>
-              {project.objectives && (
-                <ul className="grid grid-cols-1 gap-1.5 text-sm text-neutral-400 sm:grid-cols-2">
-                  {project.objectives.map((objective) => (
-                    <li key={objective.label}>
-                      <span className="font-medium text-neutral-200">{objective.label}:</span>{' '}
-                      {objective.description}
-                    </li>
+              <div className="mt-3 flex flex-col gap-3">
+                <p className="text-neutral-400">{project.description}</p>
+                {project.objectives && (
+                  <ul className="grid grid-cols-1 gap-1.5 text-sm text-neutral-400 sm:grid-cols-2">
+                    {project.objectives.map((objective) => (
+                      <li key={objective.label}>
+                        <span className="font-medium text-neutral-200">{objective.label}:</span>{' '}
+                        {objective.description}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="mt-1 flex flex-wrap gap-2">
+                  {project.stack.map((item) => (
+                    <Badge key={item.label} icon={item.icon} label={item.label} />
                   ))}
-                </ul>
-              )}
-              <div className="mt-1 flex flex-wrap gap-2">
-                {project.stack.map((item) => (
-                  <Badge key={item.label} icon={item.icon} label={item.label} />
-                ))}
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </motion.div>
         ))}
 
-        <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-white/15 p-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: PROJECTS.length * 0.1, ease: 'easeOut' }}
+          className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-white/15 p-8 text-center"
+        >
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-neutral-400">
             <FontAwesomeIcon icon={faLock} className="h-5 w-5" />
           </div>
           <p className="max-w-md text-sm text-neutral-400">{PRIVATE_NOTE}</p>
-        </div>
+        </motion.div>
       </div>
     </Section>
   )

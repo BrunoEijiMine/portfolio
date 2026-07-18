@@ -5,9 +5,9 @@ import { Badge } from '@/components/ui/Badge'
 import { iconMap } from '@/lib/icons'
 import photo from '@/assets/eu.jpeg'
 
-const HEADING = 'Olá, eu sou Bruno'
+const HEADING = 'Bruno Eiji'
 const DESCRIPTION =
-  'Sou apaixonado por criar soluções que não só têm uma boa aparência, como também entregam resultado.'
+  'Desenvolvedor front-end focado em interfaces rápidas, acessíveis e fáceis de usar. Atuo no Hospital de Amor com sistemas web e mobile, unindo código e UI/UX.'
 
 const SKILLS = [
   { icon: 'code', label: 'Front-end' },
@@ -49,7 +49,7 @@ export function Intro() {
         <img
           src={photo}
           alt="Bruno Eiji"
-          className="h-64 w-56 shrink-0 rounded-2xl object-cover sm:h-72 sm:w-64"
+          className="h-64 w-56 shrink-0 rounded-2xl object-cover grayscale sm:h-72 sm:w-64"
         />
       </Card>
 
