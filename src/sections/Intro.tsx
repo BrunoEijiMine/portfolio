@@ -2,31 +2,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Section } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
-import { ImagePlaceholder } from '@/components/ui/Placeholder'
 import { iconMap } from '@/lib/icons'
+import photo from '@/assets/eu.jpeg'
 
 const HEADING = 'Olá, eu sou Bruno'
 const DESCRIPTION =
   'Sou apaixonado por criar soluções que não só têm uma boa aparência, como também entregam resultado.'
 
 const SKILLS = [
-  { icon: 'code', label: 'Desenvolvimento Frontend' },
-  { icon: 'server', label: 'Desenvolvimento Backend' },
+  { icon: 'code', label: 'Front-end' },
+  { icon: 'palette', label: 'UI/UX' },
   { icon: 'figma', label: 'Figma' },
-  { icon: 'wand', label: 'Motion Design' },
+  { icon: 'computer', label: 'Tasy Template' },
 ]
 
 const STACK_HEADING = 'Tecnologias que eu uso'
 
 const STACK = [
-  { icon: 'code', label: 'React' },
-  { icon: 'filecode', label: 'TypeScript' },
-  { icon: 'server', label: 'Node.js' },
-  { icon: 'palette', label: 'Tailwind CSS' },
-  { icon: 'layers', label: 'Next.js' },
+  { icon: 'html', label: 'HTML' },
+  { icon: 'css', label: 'CSS' },
+  { icon: 'js', label: 'JS' },
+  { icon: 'js', label: 'jQuery' },
+  { icon: 'react', label: 'React' },
+  { icon: 'tailwind', label: 'Tailwind CSS' },
+  { icon: 'bootstrap', label: 'Bootstrap' },
+  { icon: 'git', label: 'Git' },
   { icon: 'figma', label: 'Figma' },
-  { icon: 'database', label: 'PostgreSQL' },
-  { icon: 'box', label: 'Docker' },
+  { icon: 'adobexd', label: 'Adobe XD' },
+  { icon: 'photoshop', label: 'Photoshop' },
 ]
 
 export function Intro() {
@@ -43,9 +46,10 @@ export function Intro() {
           </div>
         </div>
 
-        <ImagePlaceholder
-          className="h-64 w-56 shrink-0 rounded-2xl sm:h-72 sm:w-64"
-          label="sua foto aqui"
+        <img
+          src={photo}
+          alt="Bruno Eiji"
+          className="h-64 w-56 shrink-0 rounded-2xl object-cover sm:h-72 sm:w-64"
         />
       </Card>
 
