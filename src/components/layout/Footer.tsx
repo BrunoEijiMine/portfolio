@@ -1,11 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { Container } from '@/components/ui/Container'
-import { GithubIcon, LinkedinIcon } from '@/components/icons/BrandIcons'
 
 const NAME = 'Bruno Eiji'
 
 const SOCIALS = [
-  { label: 'GitHub', href: 'https://github.com/seuusuario', Icon: GithubIcon },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/seuusuario', Icon: LinkedinIcon },
+  { label: 'GitHub', href: 'https://github.com/seuusuario', icon: faGithub },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/seuusuario', icon: faLinkedinIn },
 ]
 
 export function Footer() {
@@ -18,7 +19,7 @@ export function Footer() {
           © {year} {NAME}
         </span>
         <div className="flex items-center gap-4">
-          {SOCIALS.map(({ label, href, Icon }) => (
+          {SOCIALS.map(({ label, href, icon }) => (
             <a
               key={href}
               href={href}
@@ -27,7 +28,7 @@ export function Footer() {
               aria-label={label}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-neutral-400 transition-colors hover:border-white/30 hover:text-white"
             >
-              <Icon className="h-4 w-4" />
+              <FontAwesomeIcon icon={icon} className="h-4 w-4" />
             </a>
           ))}
         </div>

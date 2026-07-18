@@ -1,4 +1,5 @@
-import { ArrowUpRight } from 'lucide-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { Section } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { ImagePlaceholder } from '@/components/ui/Placeholder'
@@ -49,7 +50,7 @@ export function Projects() {
                 className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm text-white transition-colors hover:bg-white/10"
               >
                 {project.ctaLabel}
-                <ArrowUpRight className="h-4 w-4" />
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-4 w-4" />
               </a>
             </div>
           </Card>

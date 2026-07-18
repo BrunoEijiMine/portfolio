@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Section } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
@@ -52,13 +53,13 @@ export function Intro() {
         <p className="mb-4 text-sm font-medium text-neutral-500">{STACK_HEADING}</p>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {STACK.map((item) => {
-            const Icon = iconMap[item.icon]
+            const icon = iconMap[item.icon]
             return (
               <div
                 key={item.label}
                 className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/3 px-4 py-3 text-sm text-neutral-300"
               >
-                {Icon && <Icon className="h-4 w-4 text-neutral-500" />}
+                {icon && <FontAwesomeIcon icon={icon} className="h-4 w-4 text-neutral-500" />}
                 {item.label}
               </div>
             )

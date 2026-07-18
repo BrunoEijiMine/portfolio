@@ -1,26 +1,24 @@
 import {
-  Box,
-  Code2,
-  Database,
-  FileCode,
-  Layers,
-  Palette,
-  Server,
-  Wand2,
-} from 'lucide-react'
-import type { ComponentType, SVGProps } from 'react'
-import { FigmaIcon } from '@/components/icons/BrandIcons'
+  faBox,
+  faCode,
+  faDatabase,
+  faFileCode,
+  faLayerGroup,
+  faPalette,
+  faServer,
+  faWandMagicSparkles,
+} from '@fortawesome/free-solid-svg-icons'
+import { faFigma } from '@fortawesome/free-brands-svg-icons'
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
-type IconComponent = ComponentType<SVGProps<SVGSVGElement>>
-
-export const iconMap: Record<string, IconComponent> = {
-  code: Code2,
-  server: Server,
-  figma: FigmaIcon,
-  wand: Wand2,
-  filecode: FileCode,
-  palette: Palette,
-  layers: Layers,
-  database: Database,
-  box: Box,
+export const iconMap: Record<string, IconDefinition> = {
+  code: faCode,
+  server: faServer,
+  figma: faFigma,
+  wand: faWandMagicSparkles,
+  filecode: faFileCode,
+  palette: faPalette,
+  layers: faLayerGroup,
+  database: faDatabase,
+  box: faBox,
 }
