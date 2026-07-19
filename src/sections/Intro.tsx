@@ -49,7 +49,7 @@ export function Intro() {
         <img
           src={photo}
           alt="Bruno Eiji"
-          className="h-64 w-56 shrink-0 rounded-2xl object-cover grayscale sm:h-72 sm:w-64"
+          className="h-64 w-full rounded-2xl object-cover grayscale sm:h-72 sm:w-64 sm:shrink-0"
         />
       </Card>
 
